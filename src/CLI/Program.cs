@@ -1,6 +1,17 @@
-﻿
+﻿using Torrent.Encoding;
 
 
-byte DictionaryStart = (byte)'d';
+public class Program
+{
+    public static void Main()
+    {
+        var path = "/home/sn/Documents/test-torrent.txt";
 
-Console.WriteLine(DictionaryStart);
+        var obj = BEncoding.DecodeFile(path);
+
+        BDecoding.EncodeToFile("/home/sn/Documents/test-torrent2.txt", obj);
+    }
+}
+
+
+
